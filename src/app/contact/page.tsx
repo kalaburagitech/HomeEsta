@@ -12,7 +12,9 @@ export default function ContactPage() {
           <h1 className="mb-6 text-5xl font-bold text-white">
             Get in Touch
             <br />
-            <span className="italic text-green-400">We're Here to Help</span>
+            <span className="italic text-green-400">
+              We&apos;re Here to Help
+            </span>
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-xl text-gray-300">
             Have questions? We&apos;d love to hear from you. Send us a message
