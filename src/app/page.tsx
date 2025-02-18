@@ -50,7 +50,7 @@ export default function Home() {
                     Direct Communication
                   </li>
                 </ul>
-                <Button variant="outline" className="text-white">
+                <Button variant="outline" className="text-black">
                   LEARN MORE
                 </Button>
               </div>
@@ -72,7 +72,7 @@ export default function Home() {
                     Owner Background Check
                   </li>
                 </ul>
-                <Button variant="outline" className="text-white">
+                <Button variant="outline" className="text-black">
                   LEARN MORE
                 </Button>
               </div>
@@ -94,7 +94,7 @@ export default function Home() {
                     Location Intelligence
                   </li>
                 </ul>
-                <Button variant="outline" className="text-white">
+                <Button variant="outline" className="text-black">
                   LEARN MORE
                 </Button>
               </div>

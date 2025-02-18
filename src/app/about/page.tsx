@@ -4,8 +4,6 @@ import Image from "next/image";
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-black pt-16">
-      {" "}
-      {/* Added pt-16 for header space */}
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-black via-green-900 to-teal-900 py-24">
         <div className="container mx-auto px-4 text-center">
@@ -20,6 +18,7 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
       {/* Mission Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -31,7 +30,7 @@ export default function AboutPage() {
               <p className="mb-6 text-gray-400">
                 We believe everyone deserves a hassle-free way to find their
                 dream home. By eliminating intermediaries and leveraging
-                technology, we're making real estate transactions more
+                technology, we&apos;re making real estate transactions more
                 accessible, transparent, and cost-effective.
               </p>
               <div className="space-y-4">
@@ -74,6 +73,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
       {/* Stats Section */}
       <section className="border-t border-gray-800 bg-black py-20">
         <div className="container mx-auto px-4">
@@ -99,6 +99,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
       {/* Team Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">

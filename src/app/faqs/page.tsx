@@ -52,9 +52,9 @@ export default function FAQsPage() {
                 How do I list my property?
               </AccordionTrigger>
               <AccordionContent className="text-gray-400">
-                Simply create an account, click on "List Property," and follow
-                the step-by-step process. You'll need to provide property
-                details, photos, and documentation for verification.
+                Simply create an account, click on &quot;List Property,&quot;
+                and follow the step-by-step process. You&apos;ll need to provide
+                property details, photos, and documentation for verification.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4" className="border-gray-800">

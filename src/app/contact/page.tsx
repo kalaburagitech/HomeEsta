@@ -15,8 +15,8 @@ export default function ContactPage() {
             <span className="italic text-green-400">We're Here to Help</span>
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-xl text-gray-300">
-            Have questions? We'd love to hear from you. Send us a message and
-            we'll respond as soon as possible.
+            Have questions? We&apos;d love to hear from you. Send us a message
+            and we&apos;ll respond as soon as possible.
           </p>
         </div>
       </section>
