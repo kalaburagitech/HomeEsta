@@ -71,9 +71,9 @@ export default function FAQsPage() {
                 How do I schedule a property visit?
               </AccordionTrigger>
               <AccordionContent className="text-gray-400">
-                Once you find a property you're interested in, you can use our
-                built-in scheduling system to request a visit at your preferred
-                time. The owner will confirm the appointment.
+                Once you find a property you&apos;re interested in, you can use
+                our built-in scheduling system to request a visit at your
+                preferred time. The owner will confirm the appointment.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

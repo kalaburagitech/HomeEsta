@@ -15,9 +15,9 @@ export default function TestimonialCard() {
           ))}
         </div>
         <p className="mb-6 text-gray-600">
-          "Found my dream home without any broker hassles. The direct connection
-          with the owner made the process smooth and transparent. Highly
-          recommend HomeEsta!"
+          &quot;Found my dream home without any broker hassles. The direct
+          connection with the owner made the process smooth and transparent.
+          Highly recommend HomeEsta!&quot;
         </p>
         <div className="flex items-center">
           <div className="mr-4 h-12 w-12 overflow-hidden rounded-full">
