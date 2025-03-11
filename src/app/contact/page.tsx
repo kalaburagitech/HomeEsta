@@ -85,7 +85,7 @@ export default function ContactPage() {
                   <Phone className="mr-4 h-6 w-6 text-green-400" />
                   <div>
                     <div className="font-semibold text-white">Phone</div>
-                    <p className="text-gray-400">+91 123 456 7890</p>
+                    <p className="text-gray-400">+91 9945264555</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -95,7 +95,7 @@ export default function ContactPage() {
                     <p className="text-gray-400">
                       123 Business Park,
                       <br />
-                      Tech City, State 123456
+                      Tech City, State Bengaluru
                     </p>
                   </div>
                 </div>

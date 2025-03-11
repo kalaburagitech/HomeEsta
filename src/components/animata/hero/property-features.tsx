@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
+import Image from "next/image";
 
 // Clothespin component
 function Clothespin() {
@@ -137,11 +138,6 @@ function ThreadSystem() {
       <ThreadConnection className="left-[178px] top-[38px] hidden md:block" />
       <ThreadConnection className="left-[397px] top-[57px] hidden md:block" />
       <ThreadConnection className="left-[618px] top-[38px] hidden md:block" />
-
-      {/* Connection points - mobile */}
-      {/* <ThreadConnection className="left-[70px] top-[30px] block md:hidden" />
-      <ThreadConnection className="left-[175px] top-[40px] block md:hidden" />
-      <ThreadConnection className="left-[280px] top-[30px] block md:hidden" /> */}
     </div>
   );
 }
@@ -154,13 +150,11 @@ interface PropertyCardProps extends HTMLMotionProps<"div"> {
     imageUrl: string;
   };
   index: number;
-  verticalOffset?: number;
 }
 
 function PropertyCard({
   property,
   index,
-  verticalOffset,
   className,
   ...props
 }: PropertyCardProps) {
@@ -194,22 +188,26 @@ function PropertyCard({
   const content = (
     <>
       <Clothespin />
-      <img
-        src={imageUrl || "/placeholder.svg"}
-        alt=""
-        className="-z-1 absolute inset-0 h-full w-full rounded-xl object-cover"
-      />
+      <div className="absolute inset-0 h-full w-full">
+        <Image
+          src={imageUrl || "/placeholder.svg"}
+          alt={`Property - ${title}`}
+          fill
+          className="rounded-xl object-cover"
+          sizes="(max-width: 768px) 120px, 224px"
+        />
+      </div>
       <div className="z-10 flex h-full w-full flex-col gap-2 rounded-xl bg-gradient-to-t from-black/60 from-15% to-transparent p-3">
         <small className="inline w-fit rounded-xl bg-green-900 px-2 py-1 text-xs font-medium leading-none text-white">
           {category}
         </small>
 
         <div className="flex-1" />
-        <div className="space-y-2 rounded-xl bg-black/30 p-3 backdrop-blur-sm">
-          <h3 className="text-base font-bold leading-none text-white sm:text-sm">
+        <div className="space-y-1 rounded-xl bg-black/30 p-2 backdrop-blur-sm md:space-y-2 md:p-3">
+          <h3 className="line-clamp-1 text-xs font-bold leading-tight text-white md:text-base md:leading-none">
             {title}
           </h3>
-          <p className="text-sm font-semibold text-green-400 sm:text-xs">
+          <p className="text-xs font-semibold text-green-400 md:text-sm">
             {price}
           </p>
         </div>
@@ -220,7 +218,7 @@ function PropertyCard({
   const containerClassName = cn(
     "relative flex flex-col overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:shadow-green-900/20",
     "md:h-[300px] md:w-56", // Desktop size
-    "h-[200px] w-[100px]", // Mobile size
+    "h-[220px] w-[120px]", // Mobile size - increased from 200px/100px
     className
   );
 
@@ -277,7 +275,6 @@ export default function PropertyFeatures() {
         <div className="relative hidden md:flex">
           <PropertyCard
             index={0}
-            verticalOffset={140}
             property={properties[0]}
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -292,7 +289,6 @@ export default function PropertyFeatures() {
 
           <PropertyCard
             index={1}
-            verticalOffset={80}
             property={properties[1]}
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -307,7 +303,6 @@ export default function PropertyFeatures() {
 
           <PropertyCard
             index={2}
-            verticalOffset={140}
             property={properties[2]}
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
