@@ -143,7 +143,7 @@ function ThreadSystem() {
 }
 
 interface PropertyCardProps extends HTMLMotionProps<"div"> {
-  property: {
+  propertyData: {
     title: ReactNode;
     category: string;
     price: string;
@@ -153,12 +153,12 @@ interface PropertyCardProps extends HTMLMotionProps<"div"> {
 }
 
 function PropertyCard({
-  property,
+  propertyData,
   index,
   className,
   ...props
 }: PropertyCardProps) {
-  const { title, category, price, imageUrl } = property;
+  const { title, category, price, imageUrl } = propertyData;
 
   // Create more complex swaying animation
   const controls = useAnimationControls();
@@ -275,7 +275,7 @@ export default function PropertyFeatures() {
         <div className="relative hidden md:flex">
           <PropertyCard
             index={0}
-            property={properties[0]}
+            propertyData={properties[0]}
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 50 }}
@@ -289,7 +289,7 @@ export default function PropertyFeatures() {
 
           <PropertyCard
             index={1}
-            property={properties[1]}
+            propertyData={properties[1]}
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, type: "spring", stiffness: 50 }}
@@ -303,7 +303,7 @@ export default function PropertyFeatures() {
 
           <PropertyCard
             index={2}
-            property={properties[2]}
+            propertyData={properties[2]}
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6, type: "spring", stiffness: 50 }}
@@ -320,7 +320,7 @@ export default function PropertyFeatures() {
         <div className="relative flex md:hidden">
           <PropertyCard
             index={0}
-            property={properties[0]}
+            propertyData={properties[0]}
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 50 }}
@@ -334,7 +334,7 @@ export default function PropertyFeatures() {
 
           <PropertyCard
             index={1}
-            property={properties[1]}
+            propertyData={properties[1]}
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, type: "spring", stiffness: 50 }}
@@ -348,7 +348,7 @@ export default function PropertyFeatures() {
 
           <PropertyCard
             index={2}
-            property={properties[2]}
+            propertyData={properties[2]}
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6, type: "spring", stiffness: 50 }}
