@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 import {
   Home,
   Search,
@@ -14,7 +14,7 @@ import {
   Heart,
   Share2,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -66,9 +66,6 @@ type Property = {
 };
 
 export default function PropertiesPage() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
   const [properties, setProperties] = useState<Property[]>([]);
   const [filteredProperties, setFilteredProperties] = useState<Property[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -235,7 +232,7 @@ export default function PropertiesPage() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
@@ -439,7 +436,7 @@ interface PropertyCardProps {
   getPropertyImage: (property: Property) => string;
   getBedroomsCount: (features: string[]) => string;
   getBathroomsCount: (features: string[]) => string;
-  itemVariants: any;
+  itemVariants: Variants;
 }
 
 function PropertyCard({
@@ -469,11 +466,15 @@ function PropertyCard({
           viewMode === "grid" ? "aspect-[4/3] w-full" : "md:w-2/5"
         )}
       >
-        <img
-          src={getPropertyImage(property) || "/placeholder.svg"}
-          alt={property.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
+        <div className="relative h-full w-full">
+          <Image
+            src={getPropertyImage(property) || "/placeholder.svg"}
+            alt={property.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
         <div className="absolute right-3 top-3 flex gap-2">

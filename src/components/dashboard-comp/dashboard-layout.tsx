@@ -49,10 +49,11 @@ import {
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 
+// Update the props to make children optional
 export default function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
